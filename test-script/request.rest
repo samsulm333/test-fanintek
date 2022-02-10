@@ -1,0 +1,53 @@
+
+### CLICK Send Request above endpoint to run request
+
+### REGISTER ROUTES
+POST http://localhost:5002/api/v1/register
+Content-Type: application/json
+
+{
+    "email": "dora@gmail.com",
+    "password": "123456",
+    "nama": "dora",
+    "npp": 22222,
+    "npp_supervisor": 0
+}
+
+#####
+# LOGIN ROUTES
+POST http://localhost:5002/api/v1/login
+Content-Type: application/json
+
+{
+    "email": "spv2@gmail.com",
+    "password": "123456"
+}
+
+#####
+# CREATE EPRESENCE ROUTE
+POST http://localhost:5002/api/v1/epresence
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNjQ0NDcxMDg5fQ.lS1ZToVFYYSmXfZvqeweRH5ievFRhI6ULDs3uy3Klqw
+
+{
+    "type": "OUT",
+    "waktu": "2022-02-10 18:00:00"
+}
+
+
+#####
+# GET EPRESENCE
+GET  http://localhost:5002/api/v1/epresence
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjQ0NDU2NjAwfQ.7aG50AauVbvhKPDkWGG7xJKlVKtHn722Frojbhw2W44
+
+
+#####
+# APPROVE EPRESENCE BY SPV (set epresence id as params)
+PATCH   http://localhost:5002/api/v1/epresence/3
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNjQ0NDcxMjI3fQ.qwAXzcZWGw34wZxhMMU5gSVu1Q8tois46KM7HvMVFfs
+
+{
+    "is_approve": "FALSE"
+}
